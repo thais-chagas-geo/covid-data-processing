@@ -21,11 +21,11 @@ Clone o repositório para sua máquina local usando:
 ```
 git clone https://github.com/seu-usuario/covid-data-processing.git
 ```
-##Instale as dependências necessárias com o seguinte comando:
+## Instale as dependências necessárias com o seguinte comando:
 ```
 pip install -r requirements.txt
 ```
-##Uso
+## Uso
 
 Para executar o pipeline completo, utilize os seguintes comandos:
 ```
@@ -35,7 +35,8 @@ python cli.py carrega transformed_aggregated.parquet
 ```
 Você também pode executar cada script individualmente conforme descrito na seção de estrutura do projeto.
 
-##Databricks
+## Databricks
+
 Para além de executar o processo ETL localmente através de uma CLI, também implementei o processo ETL diretamente no Databricks. Este está disponível neste notebook:
 
 [ETL Notebook on Databricks](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3096057179230130/2322585530028599/2483491886094004/latest.html)
@@ -44,7 +45,10 @@ Adicionalmente, criei um outro notebook para realizar algumas análises:
 
 [Data Analysis Notebook on Databricks](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3096057179230130/2322585530028609/2483491886094004/latest.html)
 
+## Requisitos
+
 Todas as respostas aos requisitos estão no arquivo requisitos.txt deste projeto.
 
-##Contribuição
+## Contribuição
+
 Contribuições são sempre bem-vindas! Por favor, leia o arquivo CONTRIBUTING.md para mais detalhes sobre como enviar pull requests.
