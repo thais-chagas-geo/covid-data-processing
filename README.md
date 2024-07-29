@@ -38,11 +38,11 @@ Você também pode executar cada script individualmente conforme descrito na se�
 ##Databricks
 Para além de executar o processo ETL localmente através de uma CLI, também implementei o processo ETL diretamente no Databricks. Este está disponível neste notebook:
 
-ETL Notebook on Databricks(https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3096057179230130/2322585530028599/2483491886094004/latest.html)
+[ETL Notebook on Databricks](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3096057179230130/2322585530028599/2483491886094004/latest.html)
 
 Adicionalmente, criei um outro notebook para realizar algumas análises:
 
-Data Analysis Notebook on Databricks(https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3096057179230130/2322585530028609/2483491886094004/latest.html)
+[Data Analysis Notebook on Databricks](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/3096057179230130/2322585530028609/2483491886094004/latest.html)
 
 Todas as respostas aos requisitos estão no arquivo requisitos.txt deste projeto.
 
