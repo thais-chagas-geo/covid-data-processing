@@ -1,0 +1,37 @@
+Proposta de Arquitetura de Dados para o Pipeline de ETL com Databricks
+1. Extração de Dados
+A extração de dados é realizada a partir de uma URL pública fornecendo dados sobre COVID-19 em formato CSV. Utilizo a biblioteca requests em Python para baixar o arquivo CSV diretamente para o ambiente de execução do Databricks, em seguida, movido para o DBFS, garantindo que esteja acessível para as estapas subsequentes do processo. Esta abordagem é eficaz para garantir que os dados mais recentes sejam acessados e preparados para análise.
+
+2. Transformação dos Dados
+Os dados extraídos são lidos como um DataFrame Spark, e várias transformações são aplicadas:
+
+Conversão de datas: A coluna 'date' é convertida para o formato de data adequado.
+Normalização de tipos de dados: Colunas específicas são explicitamente convertidas para o tipo 'string' para uniformidade e para evitar erros de tipo durante as análises. 
+
+As transformações são feitas para adequar os dados ao uso analítico, preparando-os para carregamento e consulta eficientes. 
+
+3. Carga dos Dados
+Após a transformação, os dados são escritos em formato parquet, um formato colunar que oferece benefícios de compactação e performance em leituras analíticas. Os dados são então carregados em uma tabela gerenciada pelo Databricks, possibilitando análises eficientes e integradas dentro do ambiente Databricks. 
+
+- Criação/Atualização da Tabela: A tabela é criada ou recriada no banco de dados especificado no Databricks, garantindo que os dados mais recentes estejam disponíveis para consulta. 
+
+Implementação do Pipeline de ETL
+A implementação do processo de ETL é realizada utilizando PySpark no Databricks, aproveitando as bibliotecas Spark para transformação de dados em larga escala. O código foi documentado para garantir clareza e manutenção facilitada.
+
+Armazenamento na Plataforma Databricks
+Os dados transformados são armazenados em tabelas gerenciadas pelo Databricks no formato Parquet. Esta escolha se justifica pela eficiência do Parquet em operações analíticas e pela facilidade de integração com ferramentas de BI e visualização, como o próprio SQL Analytics do Databricks e ferramentas externas como Tableau ou Power BI.
+
+Análise Sumária dos Dados
+Utilizando o ambiente interativo do Databricks, realizei análises descritivas que incluem:
+
+Total de casos, mortes e recuperações por região.
+Média de casos confirmados, mortes e recuperações por país.
+As visualizações são criadas usando notebooks do Databricks que permitem a integração direta com bibliotecas Python como Matplotlib e Seaborn para gerar gráficos dinâmicos e interativos.
+
+Implementação de Medidas de Segurança
+Durante o processo de ETL, todas as transmissões de dados são realizadas sobre conexões seguras (HTTPS/SSL). No Databricks, utilizei funcionalidades como tabelas gerenciadas para controle de acesso e políticas de segurança para proteger os dados armazenados, assegurando que apenas usuários autorizados possam acessar informações sensíveis.
+
+Estratégia de Monitoramento
+O monitoramento do pipeline de ETL pode ser configurado utilizando o próprio Databricks e ferramentas externas como o Datadog para rastrear métricas chave como latência de processamento, taxa de erros e utilização de recursos. Alertas automatizados garantirão que a equipe de dados seja notificada imediatamente sobre qualquer problema operacional ou de desempenho.
+
+Esta arquitetura e estratégia fornecem uma base sólida para análise eficiente e segura dos dados de COVID-19, permitindo insights rápidos e baseados em dados para tomada de decisão.
